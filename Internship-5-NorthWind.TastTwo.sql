@@ -15,13 +15,13 @@ SELECT TOP 2 FirstName, LastName, Title FROM Employees
 ORDER BY BirthDate DESC
 /*Fourth task*/
 SELECT * FROM Customers
-WHERE Address = '[0-9]%' AND CompanyName = '__a%'
+WHERE Address LIKE '[0-9]%' AND CompanyName LIKE '__a%'
 ORDER BY Country
 /*Fifth task*/
 SELECT TOP 1 OrderId Quantity FROM [Order Details]
 ORDER BY Quantity DESC  
 /*Sixth task*/
-SELECT * FROM CUSTOMERS 
+SELECT count(CustomerID) FROM CUSTOMERS 
 WHERE NOT EXISTS(
 SELECT OrderID FROM ORDERS
 WHERE Customers.CustomerID=Orders.CustomerId)
